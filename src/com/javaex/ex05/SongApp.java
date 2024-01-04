@@ -42,6 +42,8 @@ public class SongApp {
 		s3.setComposer("장범준");
 		
 		s3.draw();
+		
+		
 
 	}
 
