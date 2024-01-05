@@ -10,13 +10,12 @@ public class TvApp {
 		tv.status();
 		
 		tv.power(true);
+		tv.getVolume(120);
 		tv.status();
-		tv.getChannel(9);
+		tv.getVolume(false);
 		tv.status();
-		tv.getChannel(25);
-		tv.status();
-		tv.getChannel(true);
-		tv.status();
+		
+		
 	}
-
 }
+

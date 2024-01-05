@@ -27,7 +27,7 @@ public class Tv {
 	// 메소드 - g/s   
 	// read- only : getter만 작성
 	
-	public boolean power(boolean power) {
+	public boolean power(boolean power) { // true == power on // false == power off
 		if(power==true) {
 			this.power=true;
 		} else {
@@ -35,30 +35,73 @@ public class Tv {
 		}
 		return power;
 	}
-
 	
-	
-	public void getChannel(int channel) {
+	public void getChannel(int channel) {  
 		
 		if(channel>=1 && channel<=255) {
 			this.channel = channel;
 		} else if (channel<1) {
 			this.channel = 1;
 		} else {
-			this.channel = 0;
+			this.channel = 255;
 		}
 		
 	}
 	
-	public void getChannel(boolean channel) {
-		if(channel==true) {
-			this.channel = +1 ;
+	public void getChannel(boolean channel) { // true == channel+1 // false == channel -1
+		if(this.channel>=2 && this.channel<=254) {
+			if(channel==true) {
+				this.channel = this.channel + 1;
+			} else {
+				this.channel = this.channel -1;
+			}	
+		} if(this.channel<=1) {
+			if (channel==true) {
+				this.channel = this.channel + 1;
+			} else {
+				this.channel = 1;
+			}
+		} if(this.channel>254) {
+			if (channel==false) {
+				this.channel = this.channel - 1;
+			} else {
+				this.channel = 255;
+			}
+		}
+		
+	}
+	
+	public void getVolume(int volume) {
+		if(volume>=0 && volume<=100) {
+			this.volume = volume;
+		} else if (volume<0) {
+			this.volume = 0;
+		} else {
+			this.volume = 100;
 		}
 	}
-		
-
-	public int getVolume() {
-		return volume;
+	
+	public void getVolume(boolean volume) {
+		if(this.volume>=1 && this.volume<=99) {
+			if(volume==true) {
+				this.volume = this.volume + 1;
+			} else {
+				this.volume = this.volume - 1;
+			}
+		} if(this.volume<1) {
+			if(volume==true) {
+				this.volume = this.volume + 1;
+			} else {
+				this.volume = 0;
+			}
+			
+		} if (this.volume>99) {
+			if (volume==false) {
+				this.volume = this.channel - 1;
+			} else {
+				this.volume = 100;
+			}
+		}
 	}
 
 	// 메소드 - 일반
@@ -66,12 +109,5 @@ public class Tv {
 	public void status() {
 		System.out.println("채널:" + channel + " 볼륨:" + volume + " TV:" + power);
 	}
-
-	
-	
-		
-	
-	
-
 
 }
