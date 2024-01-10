@@ -1,6 +1,6 @@
-package com.javaex.ex19;
+package com.javaex.ex21;
 
-public class Circle extends Shape {
+public class Circle extends Shape implements Drawable {
 
 	// 필드
 
@@ -36,14 +36,18 @@ public class Circle extends Shape {
 		return "Circle [radius=" + radius + ", getFillColor()=" + getFillColor() + ", getLineColor()=" + getLineColor()
 				+ "]";
 	}
-	
+
 	public void draw() {
-	    // 원을 시각화 하는 복잡한 로직작동
-	    System.out.println("====원을 그렸습니다=========");
-	    System.out.println("반지름:" + radius);
-	    System.out.println("면색:" + super.getFillColor());
-	    System.out.println("선색:" + super.getLineColor());
-	    System.out.println("============================");
+		// 원을 시각화 하는 복잡한 로직작동
+		System.out.println("======원을 그렸습니다=======");
+		System.out.println("반지름:" + radius);
+		System.out.println("면색:" + super.getFillColor());
+		System.out.println("선색:" + super.getLineColor());
+		System.out.println("============================");
+	}
+
+	public double area() {
+		return 3.14 * radius * radius;
 	}
 
 }

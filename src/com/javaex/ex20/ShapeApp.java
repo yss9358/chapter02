@@ -1,4 +1,4 @@
-package com.javaex.ex19;
+package com.javaex.ex20;
 
 public class ShapeApp {
 
@@ -28,11 +28,17 @@ public class ShapeApp {
 		// 사각형의 기록값 가져오기 
 		// ppt02-60  다운캐스팅
 		// 자식클래스로 강제 형변환 시켜서 값을 확인해본다 ( (자식클래스)부모클래스 ) 형태
-	
+          
+		//사각형의 가로값 구하기
 		System.out.println(((Ractangle)sArray[0]).getWidth());
+		
+		//원의 반지름
 		System.out.println(((Circle)sArray[2]).getRadius());
 		
-		
+		//전체 면적구하기
+		for(int i=0; i<sArray.length; i++) {
+			System.out.println(sArray[i].area());
+		}
 		
 	}
 
